@@ -1,5 +1,6 @@
 package com.uptake;
 
+import com.uptake.pages.ApproachPage;
 import com.uptake.pages.UptakeBasePage;
 import com.uptake.pages.UptakeMainPage;
 import org.junit.Before;
@@ -25,9 +26,15 @@ public class SimpleTest {
     @Test
     public void sampleTest() {
         UptakeMainPage mainPage = new UptakeMainPage();
+        ApproachPage approachPage = new ApproachPage();
 
         mainPage.navigateHere();
         mainPage.pickApproach();
+        approachPage.learnMoreAboutUptake();
+
+        Functions.sleep(5);     // Do something to verify video plays
+
+        approachPage.closeMoreAboutUptakeFancyBox();
 
         driver.close();
     }
